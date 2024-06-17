@@ -1,0 +1,114 @@
+[0;34m[playground/nsys_version/nsys_wrap.sh rank-0]   Sat Jun 15 13:57:39 +03 2024[0m
+output:  /workspace/Chimera/playground/nsys_version/nsys_result/_nccl_test_rank-0
+1
+Rank-0 nsys profile
+Warning: LBR backtrace method is not supported on this platform. DWARF backtrace method will be used.
+
+
+
+
+
+
+
+_________________ enter cupy_comm.py _________________
+当前主机名: vm_0_2_centos
+当前时间: 2024-06-15 13:57:43
+是否进行性能分析:True
+world_size:4, local_size:2, rank:0, local_rank:0, node_id:0
+Initialize NCCLCommunicator: <GLOBAL_COMM>; rank: 0
+Master put <group-<GLOBAL_COMM>-unique-id:  b'\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00' >.
+????
+Capture range started in the application
+Collecting data...
+Initialize NCCLCommunicator: <ALL_REDUCE_COMM_group_[0, 1]>; rank: 0
+Master put <group-<COMM-ALL_REDUCE_COMM_group_[0, 1]>-unique-id:  b'\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00' >.
+
+profile_ALL_REDUCE 偏移:10
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 8192
+All-reduce: [0, 1] 	Bytes: 0.00000 GB	Time: 0.00002 s	Bandwidth: 0.25 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:12
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 8192
+All-reduce: [0, 1] 	Bytes: 0.00002 GB	Time: 0.00002 s	Bandwidth: 0.98 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:14
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 8192
+All-reduce: [0, 1] 	Bytes: 0.00006 GB	Time: 0.00002 s	Bandwidth: 3.20 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:16
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 4096
+All-reduce: [0, 1] 	Bytes: 0.00024 GB	Time: 0.00006 s	Bandwidth: 4.14 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:18
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 1024
+All-reduce: [0, 1] 	Bytes: 0.00098 GB	Time: 0.00005 s	Bandwidth: 18.90 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:20
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 256
+All-reduce: [0, 1] 	Bytes: 0.00391 GB	Time: 0.00008 s	Bandwidth: 49.46 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:22
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 64
+All-reduce: [0, 1] 	Bytes: 0.01562 GB	Time: 0.00030 s	Bandwidth: 52.35 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:24
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 16
+All-reduce: [0, 1] 	Bytes: 0.06250 GB	Time: 0.00136 s	Bandwidth: 46.05 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:26
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 10
+All-reduce: [0, 1] 	Bytes: 0.25000 GB	Time: 0.00189 s	Bandwidth: 132.20 GB/s
+————————————————END————————————————
+
+
+profile_ALL_REDUCE 偏移:28
+comm: <cupy_backends.cuda.libs.nccl.NcclCommunicator object at 0x7fc5a08078f0>
+Repeat: 10
+All-reduce: [0, 1] 	Bytes: 1.00000 GB	Time: 0.00527 s	Bandwidth: 189.75 GB/s
+————————————————END————————————————
+
+None
+Capture range ended in the application
+Processing events...
+Saving temporary "/tmp/nsys-report-31d6-fe55-e772-e9df.qdstrm" file to disk...
+
+Creating final output files...
+Processing [0%                                                                 ]Processing [=================31%                                               ]Processing [=======================================63%                         ]Processing [==================================================80%              ]Processing [=============================================================97%   ]Processing [==============================================================98%  ]Processing [===============================================================99% ]Processing [===================================57%                             ]Processing [===================================58%                             ]Processing [========================41%                                        ]Processing [==================32%                                              ]Processing [==============26%                                                  ]Processing [===========22%                                                     ]Processing [=========19%                                                       ]Processing [=======16%                                                         ]Processing [=======15%                                                         ]Processing [=====13%                                                           ]Processing [=====12%                                                           ]Processing [====11%                                                            ]Processing [===10%                                                             ]Processing [====9%                                                             ]Processing [===8%                                                              ]Processing [==7%                                                               ]Processing [==6%                                                               ]Processing [=5%                                                                ]Processing [4%                                                                 ]Processing [3%                                                                 ]Processing [2%                                                                 ]Processing [1%                                                                 ]Processing [0%                                                                 ]Processing [1%                                                                 ]Processing [2%                                                                 ]Processing [3%                                                                 ]Processing [4%                                                                 ]Processing [=5%                                                                ]Processing [==6%                                                               ]Processing [==7%                                                               ]Processing [===8%                                                              ]Processing [====9%                                                             ]Processing [===10%                                                             ]Processing [====11%                                                            ]Processing [=====12%                                                           ]Processing [=====13%                                                           ]Processing [======14%                                                          ]Processing [=======15%                                                         ]Processing [=======16%                                                         ]Processing [========17%                                                        ]Processing [=========18%                                                       ]Processing [=========19%                                                       ]Processing [==========20%                                                      ]Processing [===========21%                                                     ]Processing [===========22%                                                     ]Processing [============23%                                                    ]Processing [=============24%                                                   ]Processing [=============25%                                                   ]Processing [==============26%                                                  ]Processing [===============27%                                                 ]Processing [===============28%                                                 ]Processing [================29%                                                ]Processing [=================30%                                               ]Processing [=================31%                                               ]Processing [==================32%                                              ]Processing [===================33%                                             ]Processing [===================34%                                             ]Processing [====================35%                                            ]Processing [=====================36%                                           ]Processing [=====================37%                                           ]Processing [======================38%                                          ]Processing [=======================39%                                         ]Processing [=======================40%                                         ]Processing [========================41%                                        ]Processing [=========================42%                                       ]Processing [=========================43%                                       ]Processing [==========================44%                                      ]Processing [===========================45%                                     ]Processing [===========================46%                                     ]Processing [============================47%                                    ]Processing [=============================48%                                   ]Processing [=============================49%                                   ]Processing [==============================50%                                  ]Processing [===============================51%                                 ]Processing [===============================52%                                 ]Processing [================================53%                                ]Processing [=================================54%                               ]Processing [=================================55%                               ]Processing [==================================56%                              ]Processing [===================================57%                             ]Processing [===================================58%                             ]Processing [====================================59%                            ]Processing [=====================================60%                           ]Processing [=====================================61%                           ]Processing [======================================62%                          ]Processing [=======================================63%                         ]Processing [=======================================64%                         ]Processing [========================================65%                        ]Processing [=========================================66%                       ]Processing [=========================================67%                       ]Processing [==========================================68%                      ]Processing [===========================================69%                     ]Processing [===========================================70%                     ]Processing [============================================71%                    ]Processing [=============================================72%                   ]Processing [=============================================73%                   ]Processing [==============================================74%                  ]Processing [===============================================75%                 ]Processing [===============================================76%                 ]Processing [================================================77%                ]Processing [=================================================78%               ]Processing [=================================================79%               ]Processing [==================================================80%              ]Processing [===================================================81%             ]Processing [===================================================82%             ]Processing [====================================================83%            ]Processing [=====================================================84%           ]Processing [=====================================================85%           ]Processing [======================================================86%          ]Processing [=======================================================87%         ]Processing [=======================================================88%         ]Processing [========================================================89%        ]Processing [===========================================================93%     ]Processing [===============================================================100%]
+Saved report file to "/tmp/nsys-report-31d6-fe55-e772-e9df.qdrep"
+Exporting 921743 events: [1%                                                   ]Exporting 921743 events: [2%                                                   ]Exporting 921743 events: [3%                                                   ]Exporting 921743 events: [4%                                                   ]Exporting 921743 events: [5%                                                   ]Exporting 921743 events: [=6%                                                  ]Exporting 921743 events: [=7%                                                  ]Exporting 921743 events: [==8%                                                 ]Exporting 921743 events: [==9%                                                 ]Exporting 921743 events: [==10%                                                ]Exporting 921743 events: [==11%                                                ]Exporting 921743 events: [===12%                                               ]Exporting 921743 events: [===13%                                               ]Exporting 921743 events: [====14%                                              ]Exporting 921743 events: [====15%                                              ]Exporting 921743 events: [=====16%                                             ]Exporting 921743 events: [======17%                                            ]Exporting 921743 events: [======18%                                            ]Exporting 921743 events: [=======19%                                           ]Exporting 921743 events: [=======20%                                           ]Exporting 921743 events: [========21%                                          ]Exporting 921743 events: [========22%                                          ]Exporting 921743 events: [=========23%                                         ]Exporting 921743 events: [=========24%                                         ]Exporting 921743 events: [==========25%                                        ]Exporting 921743 events: [==========26%                                        ]Exporting 921743 events: [===========27%                                       ]Exporting 921743 events: [===========28%                                       ]Exporting 921743 events: [============29%                                      ]Exporting 921743 events: [============30%                                      ]Exporting 921743 events: [=============31%                                     ]Exporting 921743 events: [=============32%                                     ]Exporting 921743 events: [==============33%                                    ]Exporting 921743 events: [===============34%                                   ]Exporting 921743 events: [===============35%                                   ]Exporting 921743 events: [================36%                                  ]Exporting 921743 events: [================37%                                  ]Exporting 921743 events: [=================38%                                 ]Exporting 921743 events: [=================39%                                 ]Exporting 921743 events: [==================40%                                ]Exporting 921743 events: [==================41%                                ]Exporting 921743 events: [===================42%                               ]Exporting 921743 events: [===================43%                               ]Exporting 921743 events: [====================44%                              ]Exporting 921743 events: [====================45%                              ]Exporting 921743 events: [=====================46%                             ]Exporting 921743 events: [=====================47%                             ]Exporting 921743 events: [======================48%                            ]Exporting 921743 events: [======================49%                            ]Exporting 921743 events: [=======================50%                           ]Exporting 921743 events: [========================51%                          ]Exporting 921743 events: [========================52%                          ]Exporting 921743 events: [=========================53%                         ]Exporting 921743 events: [=========================54%                         ]Exporting 921743 events: [==========================55%                        ]Exporting 921743 events: [==========================56%                        ]Exporting 921743 events: [===========================57%                       ]Exporting 921743 events: [===========================58%                       ]Exporting 921743 events: [============================59%                      ]Exporting 921743 events: [============================60%                      ]Exporting 921743 events: [=============================61%                     ]Exporting 921743 events: [=============================62%                     ]Exporting 921743 events: [==============================63%                    ]Exporting 921743 events: [==============================64%                    ]Exporting 921743 events: [===============================65%                   ]Exporting 921743 events: [===============================66%                   ]Exporting 921743 events: [================================67%                  ]Exporting 921743 events: [=================================68%                 ]Exporting 921743 events: [=================================69%                 ]Exporting 921743 events: [==================================70%                ]Exporting 921743 events: [==================================71%                ]Exporting 921743 events: [===================================72%               ]Exporting 921743 events: [===================================73%               ]Exporting 921743 events: [====================================74%              ]Exporting 921743 events: [====================================75%              ]Exporting 921743 events: [=====================================76%             ]Exporting 921743 events: [=====================================77%             ]Exporting 921743 events: [======================================78%            ]Exporting 921743 events: [======================================79%            ]Exporting 921743 events: [=======================================80%           ]Exporting 921743 events: [=======================================81%           ]Exporting 921743 events: [========================================82%          ]Exporting 921743 events: [========================================83%          ]Exporting 921743 events: [=========================================84%         ]Exporting 921743 events: [==========================================85%        ]Exporting 921743 events: [==========================================86%        ]Exporting 921743 events: [===========================================87%       ]Exporting 921743 events: [===========================================88%       ]Exporting 921743 events: [============================================89%      ]Exporting 921743 events: [============================================90%      ]Exporting 921743 events: [=============================================91%     ]Exporting 921743 events: [=============================================92%     ]Exporting 921743 events: [==============================================93%    ]Exporting 921743 events: [==============================================94%    ]Exporting 921743 events: [===============================================95%   ]Exporting 921743 events: [===============================================96%   ]Exporting 921743 events: [================================================97%  ]Exporting 921743 events: [================================================98%  ]Exporting 921743 events: [=================================================99% ]Exporting 921743 events: [=================================================100%]
+
+Exported successfully to
+/tmp/nsys-report-31d6-fe55-e772-e9df.sqlite
+Report file moved to "/workspace/Chimera/playground/nsys_version/nsys_result/_nccl_test_rank-0.qdrep"
+Report file moved to "/workspace/Chimera/playground/nsys_version/nsys_result/_nccl_test_rank-0.sqlite"
+
+
+Sent signal 15 (Terminated) to target application's process group ID = 6459.
+Use the kill option to modify this behavior.
+
+The target application terminated with signal 15 (SIGTERM)

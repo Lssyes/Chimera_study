@@ -1,0 +1,99 @@
+\n\n\n________________________________________________________________________________________
+[Running nsys_wrap.sh rank: 0]
+$NSYS_OUTPUT -> /workspace/Chimera/bert_prof/tmp/bert-large_chimera_4stages_4gpus_microbs100_acc1
+Warning: LBR backtrace method is not supported on this platform. DWARF backtrace method will be used.
+当前时间: 2024-06-16 18:14:45
+tcp://192.168.0.5:1234
+0
+local_rank 0, local_size 2, rank-0, world_size-4
+[[stage_to_ranks]] -> {0: [0, 3], 1: [1, 2], 2: [2, 1], 3: [3, 0]}
+[[[[[[[[[[9999]]]]]]]]]]
+[[[[[[[[[[9999]]]]]]]]]]
+[total_num_samples_per_step: 400]]]]]]]]]]
+[max_steps_per_epoch:        24]]]]]]]]]]
+total_num_samples: 3200 num_epochs: 1
+============================
+pipeline_method: chimera
+num_epochs: 1
+num_optimization_steps: 8
+world_size: 4
+num_replica: 2
+num_pipeline: 2
+num_micro_batches_per_step: 2
+recompute: False
+stage0: ranks [0, 3]
+stage1: ranks [1, 2]
+stage2: ranks [2, 1]
+stage3: ranks [3, 0]
+----------------------------
+corpus_path: ./bert_data/wikipedia.segmented.nltk.txt
+corpus_lines: 10000
+vocab_path: ./bert_data/bert-large-uncased-vocab.txt
+on_memory: False
+do_lower_case: True
+bert_config_path: ./configs/bert_config_bert-large-uncased.json
+max_seq_length: 128
+micro_batch_size: 100
+num_optimization_steps: 8
+num_epochs: None
+gradient_accumulation_steps: 1
+adam_learning_rate: 3e-05
+adam_max_grad_norm: 1.0
+beta1: 0.9
+weight_decay: 0.01
+warmup_proportion: 0.1
+damping: 0.01
+pipeline_method: chimera
+chunks: 2
+recompute: False
+num_stages: 4
+num_pipelines: 2
+checkpoint_dir: None
+save_checkpoint_steps: 200
+seed: 1
+p2p_backend: gloo
+collective_backend: nccl
+num_workers: 4
+profile: False
+observe_norm: False
+log_interval: 1
+config: None
+wandb: False
+============================
+[[pytorch sync]] 0 epoch
+[[Chimera start]] 0 epoch
+[<pipeline.PipelineStage object at 0x7f66830569a0>, <pipeline.PipelineStage object at 0x7f6683056ca0>]
+shiiitttt epoch-0 step-0 num_steps_for_this_epoch-8 num_p2p_comm-16
+barrier1
+barrier2
+barrier3
+[0;31;40m[epoch-0 step-0 start][0m
+[[pass of the dist.barrier()]]
+[0;36;40m[[[_call_chimera_pipeline]]][0m
+Exception in thread Exception in thread Thread-1Thread-4:
+:
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+        self.run()
+self.run()  File "/opt/conda/lib/python3.8/threading.py", line 870, in run
+
+  File "/opt/conda/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/workspace/Chimera/pipeline.py", line 187, in recv_comm_thread_async
+    self._target(*self._args, **self._kwargs)    
+req.wait()  # 等待接收完成  File "/workspace/Chimera/pipeline.py", line 187, in recv_comm_thread_async
+
+RuntimeError: [/opt/pytorch/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.0.5]:61602
+    req.wait()  # 等待接收完成
+RuntimeError: [/opt/pytorch/pytorch/third_party/gloo/gloo/transport/tcp/pair.cc:598] Connection closed by peer [192.168.0.5]:61602
+The target application terminated. One or more process it created re-parented.
+Waiting for termination of re-parented processes.
+Use the `--wait` option to modify this behavior.
+
+The target application terminated with signal 9 (SIGKILL)
+
+The application terminated before the collection started. No report was generated.
+Training script completed at Sun Jun 16 18:32:35 +03 2024, watching for nsys to complete {30s}...
+nsys script completed at Sun Jun 16 18:33:05 +03 2024

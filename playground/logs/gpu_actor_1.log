@@ -1,0 +1,164 @@
+Actor locak-1/world-1
+vm_0_2_centos:7653:7653 [0] NCCL INFO Bootstrap : Using eth0:192.168.0.5<0>
+vm_0_2_centos:7653:7653 [0] NCCL INFO Plugin Path : /opt/hpcx/nccl_rdma_sharp_plugin/lib/libnccl-net.so
+vm_0_2_centos:7653:7653 [0] NCCL INFO P2P plugin IBext
+vm_0_2_centos:7653:7653 [0] NCCL INFO NET/IB : No device found.
+vm_0_2_centos:7653:7653 [0] NCCL INFO NET/IB : No device found.
+vm_0_2_centos:7653:7653 [0] NCCL INFO NET/Socket : Using [0]eth0:192.168.0.5<0>
+vm_0_2_centos:7653:7653 [0] NCCL INFO Using network Socket
+vm_0_2_centos:7653:7912 [0] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0
+vm_0_2_centos:7653:7912 [0] NCCL INFO Channel 00 : 1[130] -> 2[120] [send] via NET/Socket/0
+vm_0_2_centos:7653:7912 [0] NCCL INFO Channel 01 : 1[130] -> 2[120] [send] via NET/Socket/0
+vm_0_2_centos:7653:7912 [0] NCCL INFO Connected all rings
+vm_0_2_centos:7653:7912 [0] NCCL INFO Channel 00 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7912 [0] NCCL INFO Channel 01 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7912 [0] NCCL INFO Connected all trees
+vm_0_2_centos:7653:7912 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 8/8/512
+vm_0_2_centos:7653:7912 [0] NCCL INFO 2 coll channels, 2 p2p channels, 1 p2p channels per peer
+vm_0_2_centos:7653:7912 [0] NCCL INFO comm 0x7f60440090d0 rank 1 nranks 4 cudaDev 0 busId 130 - Init COMPLETE
+
+______偏移量: 10 ______
+
+----------
+Warmup number: 2
+vm_0_2_centos:7653:7919 [0] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0 [2] -1/-1/-1->1->0 [3] -1/-1/-1->1->0 [4] -1/-1/-1->1->0 [5] -1/-1/-1->1->0 [6] -1/-1/-1->1->0 [7] -1/-1/-1->1->0 [8] -1/-1/-1->1->0 [9] -1/-1/-1->1->0 [10] -1/-1/-1->1->0 [11] -1/-1/-1->1->0 [12] -1/-1/-1->1->0 [13] -1/-1/-1->1->0 [14] -1/-1/-1->1->0 [15] -1/-1/-1->1->0 [16] -1/-1/-1->1->0 [17] -1/-1/-1->1->0 [18] -1/-1/-1->1->0 [19] -1/-1/-1->1->0 [20] -1/-1/-1->1->0 [21] -1/-1/-1->1->0 [22] -1/-1/-1->1->0 [23] -1/-1/-1->1->0
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 00 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 01 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 02 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 03 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 04 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 05 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 06 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 07 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 08 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 09 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 10 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 11 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 12 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 13 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 14 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 15 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 16 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 17 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 18 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 19 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 20 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 21 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 22 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Channel 23 : 1[130] -> 0[120] via P2P/IPC/read
+vm_0_2_centos:7653:7919 [0] NCCL INFO Connected all rings
+vm_0_2_centos:7653:7919 [0] NCCL INFO Connected all trees
+vm_0_2_centos:7653:7919 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 8/8/512
+vm_0_2_centos:7653:7919 [0] NCCL INFO 24 coll channels, 32 p2p channels, 32 p2p channels per peer
+vm_0_2_centos:7653:7919 [0] NCCL INFO comm 0x7f60441d3a60 rank 1 nranks 2 cudaDev 0 busId 130 - Init COMPLETE
+Repeat 8192 Benchmark
+
+______偏移量: 11 ______
+
+----------
+Warmup number: 2
+Repeat 8192 Benchmark
+
+______偏移量: 12 ______
+
+----------
+Warmup number: 2
+Repeat 8192 Benchmark
+
+______偏移量: 13 ______
+
+----------
+Warmup number: 2
+Repeat 8192 Benchmark
+
+______偏移量: 14 ______
+
+----------
+Warmup number: 2
+Repeat 8192 Benchmark
+
+______偏移量: 15 ______
+
+----------
+Warmup number: 2
+Repeat 8192 Benchmark
+
+______偏移量: 16 ______
+
+----------
+Warmup number: 2
+Repeat 4096 Benchmark
+
+______偏移量: 17 ______
+
+----------
+Warmup number: 2
+Repeat 2048 Benchmark
+
+______偏移量: 18 ______
+
+----------
+Warmup number: 2
+Repeat 1024 Benchmark
+
+______偏移量: 19 ______
+
+----------
+Warmup number: 2
+Repeat 512 Benchmark
+
+______偏移量: 20 ______
+
+----------
+Warmup number: 2
+Repeat 256 Benchmark
+
+______偏移量: 21 ______
+
+----------
+Warmup number: 2
+Repeat 128 Benchmark
+
+______偏移量: 22 ______
+
+----------
+Warmup number: 2
+Repeat 64 Benchmark
+
+______偏移量: 23 ______
+
+----------
+Warmup number: 2
+Repeat 32 Benchmark
+
+______偏移量: 24 ______
+
+----------
+Warmup number: 2
+Repeat 16 Benchmark
+
+______偏移量: 25 ______
+
+----------
+Warmup number: 2
+Repeat 10 Benchmark
+
+______偏移量: 26 ______
+
+----------
+Warmup number: 2
+Repeat 10 Benchmark
+
+______偏移量: 27 ______
+
+----------
+Warmup number: 2
+Repeat 10 Benchmark
+
+______偏移量: 28 ______
+
+----------
+Warmup number: 2
+Repeat 10 Benchmark
+
+______END_____

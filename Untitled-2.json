@@ -1,0 +1,85 @@
+{
+    "log": {
+        "error": "/var/log/v2ray/error.log",
+        "loglevel": "debug",
+        "access": "/var/log/v2ray/access.log"
+    },
+    "inbounds": [
+        {
+            "port": 8890,
+            "settings": {
+                "auth": "noauth",
+                "udp": false
+            },
+            "protocol": "socks",
+            "listen": "0.0.0.0"
+        },
+        {
+            "listen": "0.0.0.0",
+            "protocol": "http",
+            "settings": {
+                "timeout": 360
+            },
+            "port": 8890
+        }
+    ],
+    "outbounds": [
+        {
+            "settings": {
+                "vnext": [
+                    {
+                        "port": 19108,
+                        "users": [
+                            {
+                                "flow": "",
+                                "level": 0,
+                                "encryption": "none",
+                                "id": "c580b314-129a-40ca-8f17-963370a6c239"
+                            }
+                        ],
+                        "address": "172.207.129.32"
+                    }
+                ]
+            },
+            "tag": "proxy",
+            "mux": {
+                "enabled": false,
+                "concurrency": 8
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "none",
+                "tcpSettings": {
+                    "header": {
+                        "type": "none"
+                    }
+                }
+            },
+            "protocol": "vless"
+        },
+        {
+            "settings": {
+                "domainStrategy": "UseIP",
+                "userLevel": 0
+            },
+            "tag": "direct",
+            "protocol": "freedom"
+        },
+        {
+            "settings": {
+                "response": {
+                    "type": "none"
+                }
+            },
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "dns": {},
+    "routing": {
+        "settings": {
+            "rules": [],
+            "domainStrategy": "AsIs"
+        }
+    }
+}

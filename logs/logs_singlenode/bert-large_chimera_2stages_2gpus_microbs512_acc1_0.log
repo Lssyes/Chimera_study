@@ -1,0 +1,112 @@
+[Running nsys_wrap.sh rank: 0]
+output----bert_prof/bert-large_chimera_2stages_2gpus_microbs512_acc1_node_rank0
+Warning: LBR backtrace method is not supported on this platform. DWARF backtrace method will be used.
+当前时间: 2024-06-07 00:01:38
+tcp://192.168.0.5:1234
+0
+local_rank 0, local_size 1, rank-0, world_size-2
+[[stage_to_ranks]] -> {0: [0, 1], 1: [1, 0]}
+[[[[[[[[[[999999]]]]]]]]]]
+[[[[[[[[[[999999]]]]]]]]]]
+[total_num_samples_per_step: 1024]]]]]]]]]]
+[max_steps_per_epoch:        976]]]]]]]]]]
+total_num_samples: 8192 num_epochs: 1
+============================
+pipeline_method: chimera
+num_epochs: 1
+num_optimization_steps: 8
+world_size: 2
+num_replica: 2
+num_pipeline: 2
+num_micro_batches_per_step: 1
+recompute: False
+stage0: ranks [0, 1]
+stage1: ranks [1, 0]
+----------------------------
+corpus_path: ./bert_data/wikipedia.segmented.nltk.txt.1
+corpus_lines: 1000000
+vocab_path: ./bert_data/bert-large-uncased-vocab.txt
+on_memory: False
+do_lower_case: True
+bert_config_path: ./configs/bert_config_bert-large-uncased.json
+max_seq_length: 128
+micro_batch_size: 512
+num_optimization_steps: 8
+num_epochs: None
+gradient_accumulation_steps: 1
+adam_learning_rate: 3e-05
+adam_max_grad_norm: 1.0
+beta1: 0.9
+weight_decay: 0.01
+warmup_proportion: 0.1
+damping: 0.01
+pipeline_method: chimera
+chunks: 2
+recompute: False
+num_stages: 2
+num_pipelines: 2
+checkpoint_dir: None
+save_checkpoint_steps: 200
+seed: 1
+p2p_backend: gloo
+collective_backend: nccl
+num_workers: 4
+profile: False
+observe_norm: False
+log_interval: 1
+config: None
+wandb: False
+============================
+[[pytorch sync]] 0 epoch
+[[Chimera start]] 0 epoch
+[<pipeline.PipelineStage object at 0x7fa7082d03a0>, <pipeline.PipelineStage object at 0x7fa7082d06d0>]
+[[pass of the dist.barrier()]]
+[0;36;40m[[[_call_chimera_pipeline]]][0m
+Traceback (most recent call last):
+  File "./main_bert.py", line 501, in <module>
+    main()
+  File "./main_bert.py", line 111, in main
+    train_one_epoch(epoch, 
+  File "./main_bert.py", line 154, in train_one_epoch
+    loss = stage.call_pipeline(train_iterator,
+  File "/opt/conda/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/workspace/Chimera/pipeline.py", line 411, in call_pipeline
+    _call_pipeline(**kwargs)
+  File "/workspace/Chimera/pipeline.py", line 575, in _call_chimera_pipeline
+    forward(index, up_down)
+  File "/workspace/Chimera/pipeline.py", line 537, in forward
+    call('call_forward', index, down_or_up,
+  File "/workspace/Chimera/pipeline.py", line 534, in call
+    getattr(self.pipe_stage[index], func_name)(*args)
+  File "/workspace/Chimera/pipeline.py", line 257, in call_forward
+    outputs = self.stage_module(**inputs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/Chimera/bert_model.py", line 69, in forward
+    outputs = super().forward(
+  File "/opt/conda/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 1022, in forward
+    encoder_outputs = self.encoder(
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 612, in forward
+    layer_outputs = layer_module(
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 497, in forward
+    self_attention_outputs = self.attention(
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 427, in forward
+    self_outputs = self.self(
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 325, in forward
+    attention_scores = torch.matmul(query_layer, key_layer.transpose(-1, -2))
+RuntimeError: CUDA out of memory. Tried to allocate 512.00 MiB (GPU 0; 39.42 GiB total capacity; 37.69 GiB already allocated; 219.06 MiB free; 37.83 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+The target application returned non-zero exit code 1
+
+The application terminated before the collection started. No report was generated.
+Training script completed at Fri Jun  7 00:01:57 +03 2024
+nsys script completed at Fri Jun  7 00:02:27 +03 2024

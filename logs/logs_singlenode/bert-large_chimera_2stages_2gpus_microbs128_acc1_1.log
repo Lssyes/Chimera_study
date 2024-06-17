@@ -1,0 +1,64 @@
+[Running nsys_wrap.sh rank: 1]
+output----bert_prof/bert-large_chimera_2stages_2gpus_microbs128_acc1_node_rank1
+Warning: LBR backtrace method is not supported on this platform. DWARF backtrace method will be used.
+当前时间: 2024-06-07 00:03:41
+tcp://192.168.0.5:1234
+1
+local_rank 0, local_size 1, rank-1, world_size-2
+[[stage_to_ranks]] -> {0: [0, 1], 1: [1, 0]}
+[[[[[[[[[[999999]]]]]]]]]]
+[[[[[[[[[[999999]]]]]]]]]]
+[total_num_samples_per_step: 256]]]]]]]]]]
+[max_steps_per_epoch:        3906]]]]]]]]]]
+total_num_samples: 2048 num_epochs: 1
+[[pytorch sync]] 0 epoch
+[[Chimera start]] 0 epoch
+[<pipeline.PipelineStage object at 0x7f3cfb670fd0>, <pipeline.PipelineStage object at 0x7f3ccd2da550>]
+/opt/conda/lib/python3.8/site-packages/transformers/modeling_utils.py:909: FutureWarning: The `device` argument is deprecated and will be removed in v5 of Transformers.
+  warnings.warn(
+[[pass of the dist.barrier()]]
+[0;36;40m[[[_call_chimera_pipeline]]][0m
+Traceback (most recent call last):
+  File "./main_bert.py", line 501, in <module>
+    main()
+  File "./main_bert.py", line 111, in main
+    train_one_epoch(epoch, 
+  File "./main_bert.py", line 154, in train_one_epoch
+    loss = stage.call_pipeline(train_iterator,
+  File "/opt/conda/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/workspace/Chimera/pipeline.py", line 411, in call_pipeline
+    _call_pipeline(**kwargs)
+  File "/workspace/Chimera/pipeline.py", line 575, in _call_chimera_pipeline
+    forward(index, up_down)
+  File "/workspace/Chimera/pipeline.py", line 537, in forward
+    call('call_forward', index, down_or_up,
+  File "/workspace/Chimera/pipeline.py", line 534, in call
+    getattr(self.pipe_stage[index], func_name)(*args)
+  File "/workspace/Chimera/pipeline.py", line 257, in call_forward
+    outputs = self.stage_module(**inputs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/workspace/Chimera/bert_model.py", line 136, in forward
+    prediction_scores, seq_relationship_score = self.cls(sequence_output, pooled_output)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 733, in forward
+    prediction_scores = self.predictions(sequence_output)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/transformers/models/bert/modeling_bert.py", line 702, in forward
+    hidden_states = self.decoder(hidden_states)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/functional.py", line 1851, in linear
+    return torch._C._nn.linear(input, weight, bias)
+RuntimeError: CUDA out of memory. Tried to allocate 1.86 GiB (GPU 0; 39.42 GiB total capacity; 36.27 GiB already allocated; 1.73 GiB free; 36.31 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+
+The target application returned non-zero exit code 1
+
+The application terminated before the collection started. No report was generated.
+Training script completed at Fri Jun  7 00:03:55 +03 2024
+nsys script completed at Fri Jun  7 00:04:25 +03 2024

@@ -1,0 +1,28 @@
+偏移:20
+self.ct--1
+rank: 1, group: [0, 1]
+SendRecv: [[0, 1]]	Bytes: 0.00391 GB	Time: 0.00008 s	Bandwidth: 51.53 GB/s
+偏移:21
+self.ct--2
+rank: 1, group: [0, 1]
+SendRecv: [[0, 1]]	Bytes: 0.00781 GB	Time: 0.00008 s	Bandwidth: 94.02 GB/s
+偏移:22
+self.ct--3
+rank: 1, group: [0, 1]
+SendRecv: [[0, 1]]	Bytes: 0.01562 GB	Time: 0.00013 s	Bandwidth: 124.30 GB/s
+偏移:23
+self.ct--4
+rank: 1, group: [0, 1]
+SendRecv: [[0, 1]]	Bytes: 0.03125 GB	Time: 0.00021 s	Bandwidth: 151.65 GB/s
+偏移:24
+self.ct--5
+rank: 1, group: [0, 1]
+SendRecv: [[0, 1]]	Bytes: 0.06250 GB	Time: 0.00030 s	Bandwidth: 210.54 GB/s
+偏移:25
+self.ct--6
+rank: 1, group: [0, 1]
+SendRecv: [[0, 1]]	Bytes: 0.12500 GB	Time: 0.00055 s	Bandwidth: 226.64 GB/s
+偏移:26
+self.ct--7
+rank: 1, group: [0, 1]
+SendRecv: [[0, 1]]	Bytes: 0.25000 GB	Time: 0.00107 s	Bandwidth: 234.62 GB/s
