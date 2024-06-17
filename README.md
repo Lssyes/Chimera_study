@@ -5,6 +5,11 @@ https://github.com/microsoft/AzureML-BERT/blob/master/docs/dataprep.md
 Please store `wikipedia.segmented.nltk.txt` file under the `bert_data/` directory.
 
 
+N个月之后，想要启动Chimera的时候，需要做的事情
+
+[notion笔记](https://spicy-scribe-981.notion.site/Chimera-f8fb5a0e3ac14430b6a8f524f23a38f3?pvs=4)
+
+
 
 # 手动启动
 
